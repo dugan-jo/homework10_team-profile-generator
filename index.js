@@ -1,9 +1,13 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
-let employee = require('./lib/employee');
-// const manager = require('./lib/manager');
+let employee = require('./lib/Employee');
+const Engineer = require('./lib/engineer');
+const Manager = require('./lib/Manager');
+const Intern = require('./lib/Intern');
+const newEmployees = [];
 
-const init = (data) => {
+
+const init = () => {
     return inquirer.prompt([{
                 type: 'input',
                 message: 'What is your name?',
@@ -26,30 +30,40 @@ const init = (data) => {
                 default: ['Employee'],
                 name: 'getRole',
             },
-
+            {
+                type: 'input',
+                message: 'What is your office number?',
+                name: 'officeNumber',
+                when: (answers) => answers.getRole === 'Manager'
+            },
+            {
+                type: 'input',
+                message: 'What is your GitHub username?',
+                name: 'github',
+                when: (answers) => answers.getRole === 'Engineer'
+            },
+            {
+                type: 'input',
+                message: 'What school do you go to?',
+                name: 'school',
+                when: (answers) => answers.getRole === 'Intern'
+            },
         ])
         .then((data) => {
             if (data.getRole === "Manager") {
-                return inquirer.prompt([{
-                    type: 'input',
-                    message: 'What is your office number?',
-                    name: 'officeNumber'
-                }])
+                const manager = new Manager(data.getName, data.getId, data.getEmail, data.officeNumber)
+                newEmployees.push(manager)
             }
             if (data.getRole === "Engineer") {
-                return inquirer.prompt([{
-                    type: 'input',
-                    message: 'What is your GitHub',
-                    name: 'github'
-                }])
+                const engineer = new Engineer(data.getName, data.getId, data.getEmail, data.github)
+                newEmployees.push(engineer)
             }
             if (data.getRole === "Intern") {
-                return inquirer.prompt([{
-                    type: 'input',
-                    message: 'What School do you go to?',
-                    name: 'school'
-                }])
+                const intern = new Intern(data.getName, data.getId, data.getEmail, data.school)
+                newEmployees.push(intern)
             }
+
+            console.log(newEmployees)
         })
         .then((data) => {
             return inquirer.prompt([{
@@ -58,33 +72,33 @@ const init = (data) => {
                 choices: ['YES', 'NO'],
                 default: ['YES'],
                 name: 'anotherInput'
-            }]) 
+            }])
         })
         .then((data) => {
             if (data.anotherInput === 'YES') {
-                // createCard()
                 init()
             } else {
+                // writeHTML()
                 // createCard()
             }
         })
-    }
-
-const writeHTML = data => {
-    fs.writeFile('index.HTML', JSON.stringify(data), (err) => {
-        err ? console.log(err) : console.log("The file has been created");
-    })
-    console.log(data);
 }
 
-init()
-// need to bring in employee.js
-    .then(data => {
-        console.log(new employee(data))
-        return new employee(data);
-        })
-    .then(input => {
-        return writeHTML(input)
-    })
 
-   
+// const writeHTML = () => {
+//     fs.writeFile('index.HTML', makeHTML(employeeArr), (err) => {
+//         err ? console.log(err) : console.log("The file has been created");
+//     })
+//     console.log(data);
+// }
+
+init()
+//     // need to bring in employee.js
+//     .then(data => {
+//         // console.log(new employee(data))
+//         return new employee(data);
+//     })
+
+//     .then(input => {
+//         return writeHTML(input)
+//     })
