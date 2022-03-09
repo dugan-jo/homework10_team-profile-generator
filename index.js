@@ -4,7 +4,9 @@ let employee = require('./lib/Employee');
 const Engineer = require('./lib/engineer');
 const Manager = require('./lib/Manager');
 const Intern = require('./lib/Intern');
-const newEmployees = [];
+const makeHTML = require('./src/src');
+
+const newEmployee = [];
 
 
 const init = () => {
@@ -52,18 +54,18 @@ const init = () => {
         .then((data) => {
             if (data.getRole === "Manager") {
                 const manager = new Manager(data.getName, data.getId, data.getEmail, data.officeNumber)
-                newEmployees.push(manager)
+                return newEmployee.push(manager)
             }
             if (data.getRole === "Engineer") {
                 const engineer = new Engineer(data.getName, data.getId, data.getEmail, data.github)
-                newEmployees.push(engineer)
+                return newEmployee.push(engineer)
             }
             if (data.getRole === "Intern") {
                 const intern = new Intern(data.getName, data.getId, data.getEmail, data.school)
-                newEmployees.push(intern)
+                return newEmployee.push(intern)
             }
+            console.log(newEmployee, 'line 67')
 
-            console.log(newEmployees)
         })
         .then((data) => {
             return inquirer.prompt([{
@@ -78,27 +80,42 @@ const init = () => {
             if (data.anotherInput === 'YES') {
                 init()
             } else {
-                // writeHTML()
-                // createCard()
+                writeHTML(newEmployee)
+                console.log(newEmployee, 'line 84')
             }
+            console.log(newEmployee, 'line 86')
+          
+            return(newEmployee)
         })
+
+
 }
 
+   const writeHTML = (newEmployee) => {
+       console.log(newEmployee)
 
-// const writeHTML = () => {
-//     fs.writeFile('index.HTML', makeHTML(employeeArr), (err) => {
-//         err ? console.log(err) : console.log("The file has been created");
-//     })
-//     console.log(data);
-// }
+            console.log(newEmployee, 'line 97')
+            fs.writeFile('./dist/index.HTML', makeHTML(newEmployee), (err) => {
+                err ? console.log(err) : console.log("The file has been created");
+            })
+            return(makeHTML(newEmployee));
+        }
+
+    
 
 init()
-//     // need to bring in employee.js
-//     .then(data => {
-//         // console.log(new employee(data))
-//         return new employee(data);
-//     })
 
-//     .then(input => {
-//         return writeHTML(input)
-//     })
+
+
+
+
+
+        // const writeHTML = (data) => {
+
+        //     console.log(data + "line 90js")
+        //     fs.writeFile('index.HTML', makeHTML(newEmployee), (err) => {
+        //         err ? console.log(err) : console.log("The file has been created");
+        //     })
+        //     return(newEmployee)
+        // }
+        // init()

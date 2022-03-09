@@ -1,47 +1,97 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Team Profile Generator</title>
+
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <div class="card text-center">
-                    <div class="card-header">
-                        Featured
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                    <div class="card-footer text-muted">
-                        2 days ago
-                    </div>
-                </div>
-
-
+    <header>
+        <div class="container">
+            <div class="row-12 m-4">
+                <h1>TEAM PROFILE GENERATOR</h1>
             </div>
-
-
         </div>
 
-    </div>
+    </header>
+    <style>
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+        }
+    </style>
+    <main>
+        <div class="container">
+
+            <div class="row" id="cardrow">
+                <div class="col manager">
+                    <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+                        <div class="card-header">joe</div>
+                        <div class="card-body">
+                            <h5 class="card-title" id="undefined">Manager</h5>
+                            <p class="card-text">ID: 123</p>
+                            <p class="card-text"><a href="mailto:dugan@gmail.com">Email:  dugan@gmail.com</a>
+                            <p class="card-text">Office Number: 1</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col engineer" id="David">
+                    <div class="card text-dark bg-info mb-3" style="max-width: 18rem;">
+                        <div class="card-header">David</div>
+                        <div class="card-body">
+                            <h5 class="card-title" id="undefined">Engineer</h5>
+                            <p class="card-text">ID: 234</p>
+                            <p class="card-text"><a href="mailto:david@gmail.com">Email:  david@gmail.com</a></p>
+                            <p class="card-text"><a href="https://www.github.com/dugan-jo">GitHub: dugan-jo</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" id="Marc">
+                    <div class="card text-dark bg-info mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Marc</div>
+                        <div class="card-body">
+                            <h5 class="card-title" id="undefined">Engineer</h5>
+                            <p class="card-text">ID: 874</p>
+                            <p class="card-text"><a href="mailto:marc@gmail.com">Email: marc@gmail.com</a></p>
+                            <p class="card-text"><a href="https://www.github.com/mark-io">GitHub: mark-io</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="cardrow">
+                <div class="col intern" id="Missy">
+                    <div class="card text-dark bg-warning mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Missy</div>
+                        <div class="card-body">
+                            <h5 class="card-title" id="undefined">Intern</h5>
+                            <p class="card-text">ID: 345</p>
+                            <p class="card-text"><a href="mailto:missy@gmail.com">Email: missy@gmail.com</a></p>
+                            <p class="card-text">School Name: DU</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </main>
+
+    <script>
 
 
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/js/bootstrap.min.js"
-        integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 
 </html>

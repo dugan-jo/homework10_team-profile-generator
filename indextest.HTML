@@ -1,8 +1,3 @@
-
-
-
-let makeHTML = (newEmployee) => {
-return `
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,48 +33,48 @@ return `
 
             <div class="row" id="cardrow">
                 <div class="col manager">
-                    <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+                    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
                         <div class="card-header">${newEmployee[0].name}</div>
                         <div class="card-body">
-                            <h5 class="card-title" id="${newEmployee[0].key}">Manager</h5>
+                            <h5 class="card-title" id="${newEmployee[0.key]}">Manager</h5>
                             <p class="card-text">ID: ${newEmployee[0].id}</p>
-                            <p class="card-text"><a href="mailto:${newEmployee[0].email}">Email:  ${newEmployee[0].email}</a>
+                            <p class="card-text">Email: ${newEmployee[0].email}</p>
                             <p class="card-text">Office Number: ${newEmployee[0].officeNumber}</p>
                         </div>
                     </div>
                 </div>
-                <div class="col engineer" id="${newEmployee[1].name}">
-                    <div class="card text-dark bg-info mb-3" style="max-width: 18rem;">
+                <div class="col engineer">
+                    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
                         <div class="card-header">${newEmployee[1].name}</div>
                         <div class="card-body">
-                            <h5 class="card-title" id="${newEmployee[0].key}">Engineer</h5>
+                            <h5 class="card-title" id="${newEmployee[0.key]}">Engineer</h5>
                             <p class="card-text">ID: ${newEmployee[1].id}</p>
-                            <p class="card-text"><a href="mailto:${newEmployee[1].email}">Email:  ${newEmployee[1].email}</a></p>
-                            <p class="card-text"><a href="https://www.github.com/${newEmployee[1].github}">GitHub: ${newEmployee[1].github}</a></p>
+                            <p class="card-text">Email: ${newEmployee[1].email}</p>
+                            <p class="card-text">Office Number: ${newEmployee[1].officeNumber}</p>
                         </div>
                     </div>
                 </div>
-                <div class="col" id="${newEmployee[2].name}">
-                    <div class="card text-dark bg-info mb-3" style="max-width: 18rem;">
+                <div class="col engineer">
+                    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
                         <div class="card-header">${newEmployee[2].name}</div>
                         <div class="card-body">
-                            <h5 class="card-title" id="${newEmployee[0].key}">Engineer</h5>
+                            <h5 class="card-title" id="${newEmployee[0.key]}">Engineer</h5>
                             <p class="card-text">ID: ${newEmployee[2].id}</p>
-                            <p class="card-text"><a href="mailto:${newEmployee[2].email}">Email: ${newEmployee[2].email}</a></p>
-                            <p class="card-text"><a href="https://www.github.com/${newEmployee[2].github}">GitHub: ${newEmployee[2].github}</a></p>
+                            <p class="card-text">Email: ${newEmployee[2].email}</p>
+                            <p class="card-text">Office Number: ${newEmployee[2].officeNumber}</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row" id="cardrow">
-                <div class="col intern" id="${newEmployee[3].name}">
-                    <div class="card text-dark bg-warning mb-3" style="max-width: 18rem;">
+                <div class="col intern">
+                    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
                         <div class="card-header">${newEmployee[3].name}</div>
                         <div class="card-body">
-                            <h5 class="card-title" id="${newEmployee[0].key}">Intern</h5>
+                            <h5 class="card-title" id="${newEmployee[0.key]}">Intern</h5>
                             <p class="card-text">ID: ${newEmployee[3].id}</p>
-                            <p class="card-text"><a href="mailto:${newEmployee[3].email}">Email: ${newEmployee[3].email}</a></p>
-                            <p class="card-text">School Name: ${newEmployee[3].school}</p>
+                            <p class="card-text">Email: ${newEmployee[3].email}</p>
+                            <p class="card-text">Office Number: ${newEmployee[3].officeNumber}</p>
                         </div>
                     </div>
                 </div>
@@ -99,7 +94,3 @@ return `
 </body>
 
 </html>
-`
-}
-
-module.exports = makeHTML
