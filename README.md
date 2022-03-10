@@ -1,5 +1,8 @@
 # 10 Object-Oriented Programming: Team Profile Generator
 
+# LINK TO MY VIDEO ON THE TEAM PROFILE GENERATOR WORKING
+https://drive.google.com/file/d/1t3KetItwpsJD_Rq8oWton0O11iTZ8yS4/view
+
 ## Your Task
 
 Your task is to build a Node.js command-line application that takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person. Testing is key to making code maintainable, so you’ll also write a unit test for every part of your code and ensure that it passes each test.
